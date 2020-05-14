@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\components",
+    "\\src\\components\\AlertComponent",
+    "\\src\\components\\Header",
+    "\\src\\components\\Home",
+    "\\src\\components\\RegistrationForm"
+  ],
+  "SelectedNode": "\\src\\components\\Header\\Header.js",
+  "PreviewInSolutionExplorer": false
+}
