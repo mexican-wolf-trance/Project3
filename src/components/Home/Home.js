@@ -2,7 +2,7 @@ import React from 'react';
 function Home(props) {
     return (
         <div className="mt-2">
-            Home page content
+            Welcome to COVID-19. It's hell on earth!
         </div>
     )
 }

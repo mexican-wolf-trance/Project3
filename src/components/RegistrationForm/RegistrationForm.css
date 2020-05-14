@@ -10,3 +10,8 @@
     color: green;
     font-weight: bold;
 }
+
+.click-here 
+{
+    cursor: pointer;
+}

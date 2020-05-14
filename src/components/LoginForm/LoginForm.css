@@ -1,8 +1,15 @@
 7 lines (6 sloc) 81 Bytes
-.login-card {
+.login-card 
+{
     min-height: 60vh;
 }
 
-.registerMessage {
+.registerMessage 
+{
     margin-top: 10vh;
+}
+
+.click-here
+{
+    cursor: pointer;
 }

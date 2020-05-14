@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { withRouter } from "react-router-dom";
+import "./RegistrationForm.css"
 
 function RegistrationForm(props)
 {
@@ -24,6 +26,12 @@ function RegistrationForm(props)
         if (state.password === state.confirmPassword)
         { sendDetailsToServer() }
         else { props.showError('Passwords do not match'); }
+    }
+
+    const redirectToLogin = () =>
+    {
+        props.history.push('/login');
+        props.updateTitle('Login');
     }
 
     const sendDetailsToServer = () =>
@@ -57,7 +65,6 @@ function RegistrationForm(props)
                         value={state.email}
                         onChange={handleChange}
                     />
-                    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div className="form-group text-left">
                     <label htmlFor="exampleInputPassword1">Password</label>
@@ -86,9 +93,14 @@ function RegistrationForm(props)
                 >
                     Register
                 </button>
+                <div className="form-group text-center">
+                    <label><br></br>Already have an account?</label>
+                    <span classname="form-group text-center click-here" onClick={() => redirectToLogin()}><br></br>CLICK HERE</span>
+
+                </div>
             </form>
         </div>
     )
 }
 
-export default RegistrationForm;
+export default withRouter(RegistrationForm);
