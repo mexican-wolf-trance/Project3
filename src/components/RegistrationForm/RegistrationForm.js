@@ -73,7 +73,7 @@ function RegistrationForm(props)
                         className="form-control"
                         id="confirmPassword"
                         placeholder="Confirm Password"
-                        value={state.password}
+                        value={state.confirmPassword}
                         onChange={handleChange} 
                     />
                 </div>
@@ -88,3 +88,5 @@ function RegistrationForm(props)
         </div>
     )
 }
+
+export default RegistrationForm;
