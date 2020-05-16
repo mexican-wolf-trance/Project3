@@ -10,7 +10,8 @@ function LoginForm(props)
         password: "",
         successMessage: null
     })
-    const handleChange = (e) => {
+    const handleChange = (e) =>
+    {
         const { id, value } = e.target
         setState(prevState => ({
             ...prevState,
@@ -44,12 +45,12 @@ function LoginForm(props)
         <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
             <form>
                 <div className="form-group text-left">
-                    <label htmlFor="exampleInputEmail1">Email address</label>
+                    <label /*htmlFor="exampleInputEmail1"*/>Username</label>
                     <input type="email"
                         className="form-control"
                         id="email"
                         aria-describedby="emailHelp"
-                        placeholder="Enter email"
+                        placeholder="Enter username"
                         value={state.email}
                         onChange={handleChange}
                     />

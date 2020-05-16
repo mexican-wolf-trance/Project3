@@ -6,7 +6,10 @@
     "\\src\\components\\AlertComponent",
     "\\src\\components\\Header",
     "\\src\\components\\Home",
-    "\\src\\components\\RegistrationForm"
+    "\\src\\components\\RegistrationForm",
+    "\\src\\constants",
+    "\\src\\lib",
+    "\\src\\models"
   ],
   "SelectedNode": "\\src\\components\\Header\\Header.js",
   "PreviewInSolutionExplorer": false
