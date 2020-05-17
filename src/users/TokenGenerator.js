@@ -1,35 +1,40 @@
 const express = require("express");
-const bodyParser = require("../../lib/Middleware/BodyParser");
+const bodyParser = require("../lib/Middleware/BodyParser");
 const { confirmUser } = require("./UserChecker");
 const jsonWebToken = require("jsonwebtoken");
 
-const tokenSignature = "xfiles_is_bestfiles";
+const tokenSignature = "covid_is_hell_on_earth";
 
-const createToken = (userId) => {
+const createToken = (userId) => 
+{
   return jsonWebToken.sign(
     {
       userId,
     },
     tokenSignature,
-    { expiresIn: "5m" }
+    { expiresIn: "1h" }
   );
 };
 
-const createTokenRoute = async (req, res) => {
+const createTokenRoute = async (req, res) => 
+{
   const { username, password } = req.body;
 
   const userExists = await confirmUser(username, password);
 
   console.log("user exists", userExists);
 
-  if (userExists) {
+  if (userExists) 
+  {
     const token = createToken(username);
 
     console.log("token?", token);
     res.status(201);
     res.send(token);
-  } else {
-    res.send(422);
+  } 
+  else 
+  {
+    res.sendStatus(422);
   }
 };
 

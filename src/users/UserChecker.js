@@ -1,47 +1,60 @@
 const express = require("express");
-const bodyParser = require("../../lib/Middleware/BodyParser");
+const bodyParser = require("../lib/Middleware/BodyParser");
 const bcrypt = require("bcrypt");
-const userModel = require('../../models/User')
+const userModel = require('../models/User')
 
 
-const confirmUserExists = async (username) => {
-    try {
+const confirmUserExists = async (username) =>
+{
+    try
+    {
         const results = await userModel.findOne({
             username,
         })
 
         console.log("Results? ", results)
-        if (results && results.username === username) {
+        if (results && results.username === username)
+        {
             return true;
         }
 
-        console.log("Falsefhfhfhfh")
+        console.log("Incorrect")
         return false;
-    } catch (error) {
+    }
+    catch (error)
+    {
         throw new Error("Internal server error");
     }
 };
 
-const confirmUser = async (username, password) => {
-    try {
+const confirmUser = async (username, password) =>
+{
+    console.log("username", username)
+    console.log("password", password)
+    try
+    {
         const results = await userModel.findOne({
             username,
         })
 
         console.log("results? ", results)
-        if (results && (await bcrypt.compare(password, results.password))) {
+        if (results && (await bcrypt.compare(password, results.password)))
+        {
             return true;
         }
-
         return false;
-    } catch (error) {
+    }
+    catch (error)
+    {
 
         throw new Error("Internal server error");
     }
 };
 
-const addUser = async (req, res) => {
-    try {
+const addUser = async (req, res) =>
+{
+    try
+    {
         const { username, password } = req.body;
         const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -52,7 +65,9 @@ const addUser = async (req, res) => {
         const result = await user.save();
 
         res.send(result);
-    } catch (error) {
+    }
+    catch (error)
+    {
 
         console.error(error);
         res.status(500);

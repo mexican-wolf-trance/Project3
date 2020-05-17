@@ -2,15 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\components",
-    "\\src\\components\\AlertComponent",
-    "\\src\\components\\Header",
-    "\\src\\components\\Home",
-    "\\src\\components\\RegistrationForm",
-    "\\src\\constants",
     "\\src\\lib",
-    "\\src\\models"
+    "\\src\\lib\\Middleware",
+    "\\src\\users"
   ],
-  "SelectedNode": "\\src\\components\\Header\\Header.js",
+  "SelectedNode": "\\src\\users\\UserChecker.js",
   "PreviewInSolutionExplorer": false
 }

@@ -5,14 +5,15 @@ const tokenSignature = 'covid_is_hell_on_earth';
 
 const tokenAuth = async (req, res, next) =>
 {
-    const header = req.headers.authorization;
-
-    const [type, token] = header.split(' ');
+    const header = req.headers.Authorization;
 
     if (header === undefined)
     {
-        res.send(401)
+        res.sendStatus(401);
+        return;
     }
+
+    const [type, token] = header.split(' ');
 
     if (type === 'Bearer')
     {
